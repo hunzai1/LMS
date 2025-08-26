@@ -1,0 +1,5 @@
+\student_dashboard\uploads\
+\teacher_dashboard\uploads\
+\uploads\
+db_connection.php
+teachers_db_connection.php

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Student Login</h1>
+        <form action="student_login.php" method="POST" class="login-form">
+            <!-- Email -->
+            <div class="form-group">
+                <label for="students_email">Email</label>
+                <input type="email" id="students_email" name="students_email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="students_password">Password</label>
+                <input type="password" id="students_password" name="students_password" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Login</button>
+            </div>
+        </form>
+        <a href="student_registration_form.html"> if not account click here to register</a>
+    </div>
+</body>
+</html>

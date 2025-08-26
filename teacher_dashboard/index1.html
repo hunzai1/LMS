@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Assignments</title>
+</head>
+<body>
+    <h1>Student Assignments</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Course Name</th>
+                <th>Class Name</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Data will be appended here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch data from PHP endpoint
+        fetch('fetch_assignments.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+
+                const tableBody = document.getElementById('table-body');
+                data.data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.first_name}</td>
+                        <td>${item.course_name}</td>
+                        <td>${item.class_name}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>

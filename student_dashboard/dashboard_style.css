@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.flex-1 {
+    background-color: #f4f6f9;
+}
+
+/* Header Styling */
+.head {
+    background-color: #28212aed;
+    margin: 2px 2px;
+    padding: 2px 2px;
+    border-radius: 20%;
+    color: #f1faee;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #6c7a83;
+}
+
+.head h1 {
+    font-size: 2.5rem;
+
+}
+
+.profile-picture {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar Styling */
+aside {
+    background: linear-gradient(45deg, #457b9d, #1d3557);
+    color: #f1faee;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+aside h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+aside nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside nav a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    color: #f1faee;
+    transition: background-color 0.3s ease;
+}
+
+aside nav a:hover {
+    background-color: #6c757d;
+}
+
+/* Main Content Styling */
+#mainContent h2 {
+    font-size: 1.8rem;
+    color: #1d3557;
+    margin-bottom: 15px;
+}
+
+#mainContent .grid div {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mainContent .grid div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+

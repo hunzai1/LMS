@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course List</h1>
+    <table id="coursesTable">
+        <thead>
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be dynamically populated -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch courses from the backend and populate the table
+        fetch('fetch_courses.php')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector('#coursesTable tbody');
+                data.forEach(course => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${course.course_id}</td>
+                        <td>${course.course_name}</td>
+                        <td>${course.course_des}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching courses:', error));
+    </script>
+</body>
+</html>
